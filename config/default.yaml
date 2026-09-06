@@ -2,8 +2,8 @@
 #   vis3d --config my_run.yaml
 
 input:
-  dir: /Users/office/Desktop/3Dvis/test-plot   # directory holding the image slices
-  pattern: "*.TIF"                             # glob selecting the slices, sorted by file name
+  dir: /Users/office/Desktop/3Dvis/test-vis   # directory holding the image slices
+  pattern: "*.tif"                             # glob selecting the slices, sorted by file name
 
 render:
   colormap: viridis        # any matplotlib colormap name
