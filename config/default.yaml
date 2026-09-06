@@ -1,0 +1,18 @@
+# Reference configuration. Copy it, edit the paths, run:
+#   vis3d --config my_run.yaml
+
+input:
+  dir: /Users/office/Desktop/3Dvis/test-plot   # directory holding the image slices
+  pattern: "*.TIF"                             # glob selecting the slices, sorted by file name
+
+render:
+  colormap: viridis        # any matplotlib colormap name
+  value_range: null        # [min, max] intensity range; null = use the data min/max
+  opacity: sigmoid         # PyVista opacity transfer function name or a list of values
+  camera_position: iso     # iso | xy | xz | yz
+  window_size: [1024, 768] # pixels
+  off_screen: false        # true = no interactive window, only the screenshot
+  screenshot: null         # path of a PNG to save; null = do not save
+
+logging:
+  level: INFO              # DEBUG | INFO | WARNING | ERROR

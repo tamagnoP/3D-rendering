@@ -1,0 +1,35 @@
+[project]
+name = "3Dvis"
+version = "0.1.0"
+description = "Read an image stack (TIFF) and render it as a 3D volume using pyvista."
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Tamagno Pesqueira" }]
+dependencies = [
+    "numpy>=1.24",
+    "tifffile>=2023.7.10",
+    "imagecodecs>=2023.7.10",  # LZW and other compressed TIFFs
+    "pyvista>=0.43",
+    "PyYAML>=6.0",
+]
+
+[project.scripts]
+3Dvis = "vis3d.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
